@@ -1,0 +1,89 @@
+<section  >
+  <div class="example-button-row">
+    <div class="example-flex-container">
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="left" >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <button mat-icon-button routerLink="Inicio">
+        <mat-icon >home</mat-icon>
+      </button>
+
+      <button mat-icon-button routerLink="store">
+        <mat-icon >shop</mat-icon>
+      </button>
+
+
+      <button mat-icon-button routerLink="perfilemp" *ngIf="servicioLogin.esEmpleado() && servicioLogin.esUsuario()">
+        <mat-icon >account_circle</mat-icon>
+      </button>
+
+      <button mat-icon-button routerLink="perfil" *ngIf="servicioLogin.esCliente() && servicioLogin.esUsuario()">
+        <mat-icon >account_circle</mat-icon>
+      </button>
+
+      
+    <span class="matMenu">
+      <mat-menu #menu="matMenu" >
+        <button mat-menu-item routerLink="contacto">
+          <mat-icon routerLink="perfil">contacts</mat-icon>
+          <span>Contacto</span>
+            
+        </button>
+        
+
+        <button mat-menu-item routerLink="carrito" *ngIf="servicioLogin.esCliente() && servicioLogin.esUsuario() ">
+          <mat-icon routerLink="perfil">shopping_cart</mat-icon>
+          <span>Carrito</span>
+            
+        </button>
+
+        <!-- <button mat-menu-item routerLink="perfil" *ngIf="servicioLogin.esCliente() && servicioLogin.esUsuario() ">
+          <mat-icon routerLink="perfil">account_circle</mat-icon>
+          <span>Perfil</span>
+          
+        </button> -->
+        
+        <!--*ngIf="servicioLogin.esUsuario(); else esfalsa"-->
+        <button mat-menu-item  *ngIf="servicioLogin.esEmpleado() && servicioLogin.esUsuario() && servicioLogin.perfil() == 'Gerente'"   routerLink="empleado" >
+          <mat-icon>assignment_ind</mat-icon>
+          <span>Empleados</span>
+          
+        </button>
+
+        <button mat-menu-item  *ngIf="servicioLogin.esEmpleado() && servicioLogin.esUsuario()"   routerLink="producto" >
+          <mat-icon>assignment</mat-icon>
+          <span>Productos</span>
+          
+        </button>
+
+        <button mat-menu-item  *ngIf="servicioLogin.esEmpleado() && servicioLogin.esUsuario()"   routerLink="sensor" >
+          <mat-icon>assessment</mat-icon>
+          <span>Datos Sensor</span>
+          
+        </button>
+
+        
+
+        <button mat-menu-item  *ngIf="servicioLogin.esUsuario(); else esfalsa" (click)="servicioLogin.cerrarSesion()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Salir</span>
+          
+        </button>
+
+        <ng-template #esfalsa>
+        <button mat-menu-item routerLink="login">
+          <mat-icon>account_circle</mat-icon>
+          <span>Ingresar</span>
+          
+        </button>
+        </ng-template>
+
+        
+      </mat-menu>
+    </span>
+
+    </div>
+  </div>
+</section>

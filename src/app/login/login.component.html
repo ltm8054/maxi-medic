@@ -1,0 +1,30 @@
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<br><br><br>
+<div align="center">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active"> Ingresar </h2>
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="../../assets/img/perfil.png" id="icon" alt="User Icon" />
+          </div>
+      
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="usuario.email" placeholder="Email">
+            <input type="password" id="password" class="fadeIn third" name="login"  [(ngModel)]="usuario.password" placeholder="Contraseña">
+            <input type="submit" class="fadeIn fourth" (click)="iniciosesion()" value="Ingresar">
+          </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" routerLink="../actualizarcontra">Olvide mi contraseña?</a><br>
+            <a class="underlineHover" routerLink="../resgistrate" >Registrarme</a>
+          </div>
+      
+        </div>
+      </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,84 @@
+<!-- inner page banner -->
+<div id="inner_banner" class="section inner_banner_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="full">
+          <div class="title-holder">
+            <div  class="title-holder-cell text-left">
+              <h1 style="color: black;" class="page-title">Contacto</h1>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end inner page banner -->
+<div class="section padding_layout_1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12"></div>
+      <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="full">
+            <div class="contact_information">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 adress_cont">
+                <div class="information_bottom text_align_center">
+                  <div class="icon_bottom"> <i class="fa fa-road" aria-hidden="true"></i> </div>
+                  <div class="info_cont">
+                    <mat-icon> location_on</mat-icon>
+                    <h4>General Arteaga #190</h4>
+                    <p>Guadalajara, Jalisco</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 adress_cont">
+                <div class="information_bottom text_align_center">
+                  <div class="icon_bottom"> <i class="fa fa-user" aria-hidden="true"></i> </div>
+                  <div class="info_cont">
+                    <mat-icon> call_end</mat-icon>
+                    <h4>+52 33 3143 5241</h4>
+                    <p>Lunes - Sábado 8:30am-6:30pm</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 adress_cont">
+                <div class="information_bottom text_align_center">
+                  <div class="icon_bottom"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                  <div class="info_cont">
+                    <mat-icon>assignment_ind</mat-icon>
+                    <h4>J.luis_sanz@hotmail.com</h4>
+                    <p>Soporte 24/7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div align="center">
+              <div class="wrapper fadeInDown">
+                  <div id="formContent">
+                    <h2 class="active"> Mensaje</h2>
+                
+                    <form>
+                      <input type="email" id="email" class="fadeIn second" name="email" [(ngModel)]="mensaje.email" placeholder="Email" required>
+                      <input type="text" id="password" class="fadeIn second" name="password" [(ngModel)]="mensaje.nombre" placeholder="Nombre" required>
+                      <input type="number" id="password" class="fadeIn second" name="password" [(ngModel)]="mensaje.telefono" placeholder="telefono" required>
+                      <textarea type="text" class="field_custom" [(ngModel)]="mensaje.datos" placeholder="Mensaje"></textarea>
+          
+                      <input type="submit" class="fadeIn fourth" (click)="mandar()" value="Enviar">
+                    </form>
+                
+                  </div>
+                </div>
+          </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

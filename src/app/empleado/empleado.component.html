@@ -1,0 +1,118 @@
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<br><br>
+<div>
+<!-- <form style="width: 85%; padding-left: 10%;" align="center">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="name" [(ngModel)]="empleado.nombre" placeholder="Nombre" required>
+      </div>
+      <div class="form-group col-md-6">
+        <input type="email" class="form-control" name="tipo" [(ngModel)]="empleado.email"  placeholder="Correo" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <select name="Sexo">
+        <option value="">Seleccione....</option>
+        <option [(ngModel)]="empleado.sexo" value="Hombre">Hombre</option>
+        <option [(ngModel)]="empleado.sexo" value="Mujer">Mujer</option>
+        <option value="">Otro</option>
+      </select><br>
+        <label for="">Sexo</label> <br>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="empleado.sexo" value="Hombre">
+        <label class="form-check-label" for="inlineRadio1">Hombre</label> &nbsp;
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="empleado.sexo" value="Mujer">
+        <label class="form-check-label" for="inlineRadio1">Mujer</label>
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control" name="Precio" [(ngModel)]="empleado.edad" placeholder="Edad" required>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="Existencia" [(ngModel)]="empleado.puesto" placeholder="Puesto" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="password" class="form-control" name="password" [(ngModel)]="empleado.password" placeholder="contraseña">
+        </div>
+        </div>
+      
+      
+    </div><br>
+    
+    <button type="submit" class="btn btn-primary" (click)="guardarEmp()" >Guardar</button>&nbsp; 
+    <button type="submit" class="btn btn-primary" (click)="modificarEmp()">Editar</button> <br><br> 
+    <button type="submit" class="btn btn-primary"  (click)="eliminarEmp()"> Eliminar</button>&nbsp; 
+    <button type="submit" class="btn btn-primary" (click)="verEmpleados()" >Ver</button> <br><br>
+    <div><button type="submit" class="btn btn-primary" (click)="consultarEmp()">buscar</button></div>
+    
+  </form> -->
+  <div align="center">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active"> Opciones del empleado</h2><br><br>
+      
+          <!-- Icon -->
+          <!-- <div class="fadeIn first">
+            <img src="../../assets/img/perfil.png" id="icon" alt="User Icon" />
+          </div> -->
+      
+          <!-- Login Form -->
+
+          <!-- <br><label for="">Sexo</label>
+            <br><div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="cliente.sexo" value="Mujer">
+              <label class="form-check-label" for="inlineRadio1">Mujer</label>
+              </div>
+              <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="cliente.sexo" value="Hombre">
+              <label class="form-check-label" for="inlineRadio2">Hombre</label>
+              </div>
+              <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="cliente.sexo" value="Otro" >
+              <label class="form-check-label" for="inlineRadio3">Otro</label>
+              </div> -->
+
+            
+          <form>
+            <input type="text" id="nombre" class="fadeIn second" name="nombre" [(ngModel)]="empleado.nombre" placeholder="Nombre">
+            <input type="text" id="apellido" class="fadeIn second" name="apellido" [(ngModel)]="empleado.apellido" placeholder="Apellido">
+            <input type="text" id="rfc" class="fadeIn second" name="rfc" [(ngModel)]="empleado.rfc" placeholder="RFC">
+            <input type="text" id="puesto" class="fadeIn third" name="puesto"  [(ngModel)]="empleado.puesto" placeholder="puesto">
+            <input type="number" id="sueldo" class="fadeIn third" name="sueldo"  [(ngModel)]="empleado.sueldo" placeholder="Sueldo">
+            <input type="email" id="email" class="fadeIn third" name="email"  [(ngModel)]="empleado.email" placeholder="Email">
+            <input type="password" id="password" class="fadeIn third" name="password"  [(ngModel)]="empleado.password" placeholder="Contraseña">
+
+            <input type="submit" class="fadeIn fourth" (click)="guardarEmp()" value="Guardar">
+            <input type="submit" class="fadeIn fourth" (click)="modificarEmp()" value="Editar">
+            <input type="submit" class="fadeIn fourth" (click)="eliminarEmp()" value="Eliminar">
+            <input type="submit" class="fadeIn fourth" (click)="consultarEmp()" value="Consultar">
+            <input type="submit" class="fadeIn fourth" (click)="verEmpleados()" value="Ver">
+          </form>
+        </div>
+      </div>
+</div>
+
+  <table  class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Puesto</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of empleados| async">
+            <td>{{emp.nombre}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.puesto}}</td>
+           
+            
+        </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

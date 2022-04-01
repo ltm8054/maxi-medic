@@ -1,0 +1,19 @@
+<br><br><br>
+<table>
+    <div align="center">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+              <h2 class="active"> Datos Sensor</h2><br><br>
+          
+              <form>
+                <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="datos.lectura"><br><br><br>
+
+                <input type="button" class="fadeIn fourth" (click)="startTimer()" value="Iniciar"> 
+                <input type="button" class="fadeIn fourth" (click)="detener()" value="Detener"> 
+                <input type="button" class="fadeIn fourth" (click)="guardar()" value="Guardar">
+              </form>
+          
+            </div>
+          </div>
+    </div>
+    <router-outlet></router-outlet>
